@@ -8,6 +8,7 @@ contract Token {
     // The `public` modifier makes a variable readable from outside the contract.
     string public name = "Dummy Token";
     string public symbol = "DUMMY";
+    uint8  public decimals = 0;
 
     // The fixed amount of tokens stored in an unsigned integer type variable.
     uint256 public totalSupply = 1000000;
@@ -36,7 +37,7 @@ contract Token {
      * The `external` modifier makes a function *only* callable from outside
      * the contract.
      */
-    function transfer(address to, uint256 amount) external {
+    function transfer(address to, uint256 amount) external returns (bool) {
         // Check if the transaction sender has enough tokens.
         // If `require`'s first argument evaluates to `false` then the
         // transaction will revert.
@@ -45,6 +46,7 @@ contract Token {
         // Transfer the amount.
         balances[msg.sender] -= amount;
         balances[to] += amount;
+        return true;
     }
 
     /**
