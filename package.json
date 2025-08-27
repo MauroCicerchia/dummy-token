@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hardhat:up": "npx hardhat node --hostname 0.0.0.0",
-    "hardhat:deploy": "npx hardhat --network localhost run scripts/deploy.js && npx hardhat --network localhost faucet 0x5FbDB2315678afecb367f032d93F642f64180aa3 0xEA85216d309ee8ea9A1A9d33a361AFAD01b877BC"
+    "hardhat:deploy": "npx hardhat --network localhost run scripts/deploy.js && npx hardhat --network localhost faucet 0x5FbDB2315678afecb367f032d93F642f64180aa3 $WALLET_ADDRESS"
   },
   "keywords": [],
   "author": "",
